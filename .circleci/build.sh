@@ -5,6 +5,10 @@ cd /
 git clone  https://github.com/CurioussX13/NotKernel.git -b pie mido --depth 1
 git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9 -b android-10.0.0_r20 gcc32 --depth 1 
 git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b android-10.0.0_r20 gcc --depth 1
+git clone https://github.com/CurioussX13/AnyKernel3.git -b mido ak3 
+IMAGE=/mido/out/arch/arm64/boot/Image.gz-dtb
+out=/mido/out
+date=`date +"%Y%m%d-%H%M"`
 export ARCH=arm64
 export SUBARCH=arm64
 export CROSS_COMPILE=/gcc/bin/aarch64-linux-android-
@@ -12,9 +16,14 @@ export CROSS_COMPILE_ARM32=/gcc32/bin/arm-linux-androideabi-
 cd mido
  make  O=out ARCH=arm64 mido_defconfig
 make -j32 O=out 
-curl -F chat_id=-1001313600106 -F document="@/mido/out/arch/arm64/boot/Image.gz-dtb"  https://api.telegram.org/bot994392367:AAFOYQ-8ivJRIKA4v0BPLbnWpt3XVz3IIqs/sendDocument
+cp ${IMAGE} /ak3/zImage
+cd ak3
+FINAL_ZIP="CustKernel-$(date +"%Y%m%d"-"%H%M").zip"
+zip -r9 "${FZ}" *
+cp *.zip $out
+curl -F chat_id=-1001313600106 -F document="@/mido/out/${FZ}"  https://api.telegram.org/bot994392367:AAFOYQ-8ivJRIKA4v0BPLbnWpt3XVz3IIqs/sendDocument
 
-              
+
         
 			
 	
