@@ -17,7 +17,7 @@ cd mido
  make  O=out ARCH=arm64 mido_defconfig
 make -j32 O=out 
 cp ${IMAGE} /ak3/zImage
-cd ak3
+cd /ak3
 FINAL_ZIP="CustKernel-$(date +"%Y%m%d"-"%H%M").zip"
 zip -r9 "${FZ}" *
 cp *.zip $out
