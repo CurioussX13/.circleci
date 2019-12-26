@@ -18,12 +18,8 @@ cd mido
 make -j32 O=out 
 cp ${IMAGE} /ak3/zImage
 cd /ak3
-FINAL_ZIP="CustKernel-$(date +"%Y%m%d"-"%H%M").zip"
+FZ="CustKernel-$(date +"%Y%m%d"-"%H%M").zip"
 zip -r9 "${FZ}" *
+echo zipped
 cp *.zip $out
 curl -F chat_id=-1001313600106 -F document="@/mido/out/${FZ}"  https://api.telegram.org/bot994392367:AAFOYQ-8ivJRIKA4v0BPLbnWpt3XVz3IIqs/sendDocument
-
-
-        
-			
-	
