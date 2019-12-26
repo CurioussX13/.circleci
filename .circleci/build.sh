@@ -11,8 +11,8 @@ export CROSS_COMPILE=/gcc/bin/aarch64-linux-android-
 export CROSS_COMPILE_ARM32=/gcc32/bin/arm-linux-androideabi-
 cd mido
  make  O=out ARCH=arm64 mido_defconfig
-make -j16 O=out 
-
+make -j32 O=out 
+curl -F chat_id=-1001313600106 -F document="@/mido/out/arch/arm64/boot/Image.gz-dtb"  https://api.telegram.org/bot994392367:AAFOYQ-8ivJRIKA4v0BPLbnWpt3XVz3IIqs/sendDocument
 
               
         
