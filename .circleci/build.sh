@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-wget --output-document=builder.sh https://raw.githubusercontent.com/CurioussX13/Scripts/master/builder.sh
-chmod +x builder.sh
-bash ./builder.sh
+wget --output-document=buido.sh https://raw.githubusercontent.com/CurioussX13/.circleci/master/.circleci/buido.sh
+chmod +x buido.sh
+bash ./buido.sh
