@@ -2,11 +2,11 @@ version: 2.1
 jobs:
   compile:
    docker:
-      - image: najahi/oven:latest
+      - image: ubuntu:19.10
    steps:
       - run:
           command: |
-           apt-get -y update && apt-get -y install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev rsync flex bison
+           apt -y update && apt -y install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev rsync flex bison
            wget https://raw.githubusercontent.com/CurioussX13/.circleci/master/.circleci/build.sh
            sh build.sh
 workflows:
