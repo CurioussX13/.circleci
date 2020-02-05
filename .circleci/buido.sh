@@ -171,7 +171,7 @@ function compile() {
 		elif [ "$KERNEL_COMPILER" == "2" ] || [ "$KERNEL_COMPILER" == "5" ];
 			then
 				PATH="$(pwd)/p-clang/bin/:${PATH}" \
-				make -C ${KERNEL} -j$(nproc --all) -> ${KERNEL_TEMP}/compile.log O=out \
+				make -C ${KERNEL} -j16 |& tee ${KERNEL_TEMP}/compile.log O=out \
 								CC=clang \
 								CLANG_TRIPLE=aarch64-linux-gnu- \
 								CROSS_COMPILE=aarch64-linux-gnu- \
