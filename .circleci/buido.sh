@@ -1,6 +1,4 @@
-
 #!/bin/bash
-
 cd /
 wget -O thy https://github.com/CurioussX13/Thy-K/archive/dev.zip
 unzip thy
