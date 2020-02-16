@@ -6,7 +6,7 @@ jobs:
    steps:
       - run:
           command: |
-           apt -y update && apt -y install lrzip
+           apt -y update && apt -y install lrzip zip tar wget curl
            wget https://raw.githubusercontent.com/CurioussX13/.circleci/master/.circleci/build.sh
            sh build.sh
 workflows:
